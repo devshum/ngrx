@@ -1,3 +1,4 @@
+import { RecipesEffects } from './recipes/store/recipes.effects';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -21,7 +22,7 @@ import { AuthEffects } from './auth/store/auth.effects';
     HttpClientModule,
     AppRoutingModule,
     StoreModule.forRoot(fromApp.AppReducer),
-    EffectsModule.forRoot([AuthEffects]),
+    EffectsModule.forRoot([AuthEffects, RecipesEffects]),
     StoreDevtoolsModule.instrument({ logOnly: environment.production }),
     SharedModule,
     CoreModule
